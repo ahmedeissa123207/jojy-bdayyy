@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Celebration</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9ac2 0%, #ffe5f2 50%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding: 2rem;
+            color: #333;
+        }
+        .panel {
+            max-width: 700px;
+            width: min(420px, 90%);
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .photo-frames {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .frame {
+            width: 200px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+            margin-bottom: 0.5rem;
+        }
+        .frame img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+        }
+        .frame-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h1>Me and You</h1>
+        <p>Thank you for being the most amazing person in my life. Here's to many more wonderful years together!</p>
+        <p class="heart">❤️</p>
+        <div class="photo-frames">
+            <div>
+                <div class="frame">
+                    <img id="frame1" src="photo1.jpg" class="image" alt="Photo 1">
+                </div>
+                <p class="frame-text">Photo 1</p>
+            </div>
+            <div>
+                <div class="frame">
+                    <a href="photo2.jpg" target="_blank">
+                        <img id="frame2" src="photo2.jpg" class="image" alt="Photo 2">
+                    </a>
+                </div>
+                <p class="frame-text">Photo 2</p>
+            </div>
+            <div>
+                <div class="frame">
+                    <img id="frame3" src="photo3.jpg" class="image" alt="Photo 3">
+                </div>
+                <p class="frame-text">Photo 3</p>
+            </div>
+            <div>
+                <div class="frame">
+                    <img id="frame4" src="c:\Users\user\Downloads\WhatsApp Image 2026-03-28 at 1.40.05 AM.jpeg" class="image" alt="Photo 4">
+                <p class="frame-text">Photo 4 aktr sora b7bha leky wnty so8nna</p>
+            </div>
+        </div>
+        <button onclick="window.location.href='index.html'" style="margin-top: 2rem; padding: 10px 20px; background-color: #ff9ac2; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">Return to Main Page</button>
+    </div>
+    <script>
+        function displayImage(input, frameId) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById(frameId);
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                    input.nextElementSibling.style.display = 'none';
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

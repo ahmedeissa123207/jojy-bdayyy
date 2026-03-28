@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our World</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9ac2, #ffe5f2, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            padding: 2rem;
+            color: #333;
+        }
+        .panel {
+            max-width: 700px;
+            width: min(420px, 90%);
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        a {
+            display: inline-block;
+            margin-top: 1.25rem;
+            padding: 0.8rem 1.4rem;
+            border-radius: 50px;
+            border: none;
+            text-decoration: none;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: #fff;
+            font-weight: bold;
+        }
+        button.message-btn {
+            margin: 0.25rem 0.25rem 0.25rem 0;
+            padding: 0.55rem 1rem;
+            border-radius: 30px;
+            border: none;
+            background: #f093fb;
+            color: white;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        button.message-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+        #messageArea {
+            margin-top: 1rem;
+            color: #663366;
+            font-weight: 600;
+            min-height: 2.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h1>Welcome to Our World!</h1>
+        <p>Enjoy the celebration, and thanks for being here. 🎉</p>
+        <div class="button-group" style="margin-top:1rem;">
+            <button class="message-btn" data-text="You are amazing, and your happiness means the world to me. Keep shining! ✨">first one 1</button>
+            <button class="message-btn" data-text="bt5leny as3d wa7d fl donya wna m3aky 3omrna ma hntfr2 wna 3arf da w htgwzkkk 💖">Second one 2</button>
+            <button class="message-btn" data-text="Every day with you is a gift, and I'm grateful for every moment we share. 🌟">Third one 3</button>
+             <button class="message-btn" data-text="enty agmal bent 4afetha 3eny i hope i live with you forever myl ✨">fourth one 4</button>
+        </div>
+        <div id="messageList" style="margin-top:1rem; display:flex; flex-direction:column; gap:0.5rem;"></div>
+        <button id="nextPageBtn" style="margin-top:1.5rem;padding:0.8rem 1.4rem;border-radius:50px;border:none;background:linear-gradient(135deg, #f093fb, #f5576c);color:#fff;font-weight:bold;cursor:pointer;">Go to next page</button>
+    </div>
+    <script>
+        document.querySelectorAll('button.message-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const list = document.getElementById('messageList');
+                const item = document.createElement('div');
+                item.style.background = 'rgba(255, 182, 193, 0.25)';
+                item.style.padding = '0.75rem 1rem';
+                item.style.borderRadius = '12px';
+                item.style.color = '#4f2357';
+                item.textContent = this.dataset.text;
+                list.appendChild(item);
+            });
+        });
+        document.getElementById('nextPageBtn').addEventListener('click', function() {
+            window.location.href = 'final.html';
+        });
+    </script>
+</body>
+</html>
